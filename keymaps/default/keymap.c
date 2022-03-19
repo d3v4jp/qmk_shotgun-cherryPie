@@ -105,17 +105,6 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_FN0:
-            if (record->event.pressed) {
-                printf("save keymap to eeprom\n");
-                pico_eepemu_flash_dynamic_keymap();
-                printf("complete\n");
-                printf("save eeconfig to eeprom\n");
-                pico_eepemu_flash_eeconfig();
-                printf("complete\n");
-            }
-            return false;
-            break;
     }
     return true;
 }
